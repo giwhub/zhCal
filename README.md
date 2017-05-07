@@ -1,5 +1,7 @@
 # 農曆工具包
 
+* 作者：[910JQK](https://github.com/910JQK/zhcal)
+
 * 用法
 
 * 傳統中文用戶
