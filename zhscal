@@ -688,7 +688,7 @@ def main():
     info.add_argument('-m', type=int, default=0, help='分钟')
     info.set_defaults(func=print_info)
 
-    now = subparsers.add_parser('n', help='xz')
+    now = subparsers.add_parser('xz', help='输出现在的信息')
     now.set_defaults(func=print_now)
 
     args = parser.parse_args()
