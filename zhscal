@@ -658,7 +658,7 @@ def main():
     )
     subparsers = parser.add_subparsers()
 
-    cal = subparsers.add_parser('m', help='输出月历')
+    cal = subparsers.add_parser('yl', help='输出月历')
     cal.add_argument('year', type=int)
     cal.add_argument('month', type=int)
     cal.add_argument('-f', type=int, default=0, metavar='first_weekday',
@@ -666,19 +666,19 @@ def main():
     cal.set_defaults(func=lambda args: print_calendar(args.year, args.month,
                                                         args.f))
 
-    full = subparsers.add_parser('y',
+    full = subparsers.add_parser('nl',
                                  help='输出年历')
     full.add_argument('year', type=int)
     full.add_argument('-f', type=int, default=0, metavar='first_weekday',
                       help='每周的第一天(0=周一)')
     full.set_defaults(func=lambda args: print_full_year(args.year, args.f))
 
-    festival = subparsers.add_parser('f',
+    festival = subparsers.add_parser('jr',
                                      help='输出节日的公历日期')
     festival.add_argument('year', type=int)
     festival.set_defaults(func=lambda args: print_festivals(args.year))
 
-    info = subparsers.add_parser('i',
+    info = subparsers.add_parser('zd',
         help='输出指定时间的信息，包含四柱八字'
     )
     info.add_argument('year', type=int)
@@ -688,7 +688,7 @@ def main():
     info.add_argument('-m', type=int, default=0, help='分钟')
     info.set_defaults(func=print_info)
 
-    now = subparsers.add_parser('n', help='输出现在的信息')
+    now = subparsers.add_parser('n', help='xz')
     now.set_defaults(func=print_now)
 
     args = parser.parse_args()
